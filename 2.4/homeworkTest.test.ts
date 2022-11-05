@@ -65,7 +65,7 @@ describe("Employee Manager 1.2", () => {
             )
         );
         expect( 
-            await (await driver.findElement(nameInput)))
+            await (await driver.findElement(nameInput), "Bernice Ortiz"))
         
       
         });
