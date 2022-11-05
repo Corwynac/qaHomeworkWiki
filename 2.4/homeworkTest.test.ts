@@ -64,6 +64,9 @@ describe("Employee Manager 1.2", () => {
             "Bernice"
             )
         );
+        expect( 
+            await (await driver.findElement(nameInput)))
+        
       
         });
 
@@ -82,6 +85,9 @@ describe("Employee Manager 1.2", () => {
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys("Test Name");
             await driver.findElement(cancelButton).click();
+            expect(
+                await (await driver.findElement(nameInput))
+            )
          
         });
 
@@ -109,6 +115,11 @@ describe("Employee Manager 1.2", () => {
                 "Phillip"
                 )
             );
+            expect(
+                await (await driver.findElement(bernice))
+            )
+            // Why is this expect just an await? I assumed await was just the code waiting for something to happen
+            // So this is just expecting to find the element bernice which is the employee1 element but it's not actually verifying that it says bernice?
     });
 });
 
@@ -133,6 +144,7 @@ describe("Employee Manager 1.2", () => {
                 "The name field must be between 1 and 30 characters long."
             );
         });
+        // So we need an expect at the end of every test?
         test("lets you cancel out of an error message", async () => {
             /*
             This test follows these steps:
