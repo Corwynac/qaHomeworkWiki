@@ -86,7 +86,7 @@ describe("Employee Manager 1.2", () => {
             await driver.findElement(nameInput).sendKeys("Test Name");
             await driver.findElement(cancelButton).click();
             expect(
-                await (await driver.findElement(nameInput))
+                await (await driver.findElement(nameInput), "Phillip Weaver")
             )
          
         });
@@ -116,7 +116,7 @@ describe("Employee Manager 1.2", () => {
                 )
             );
             expect(
-                await (await driver.findElement(bernice))
+                await (await driver.findElement(nameInput), "Bernice Ortiz")
             )
             // Why is this expect just an await? I assumed await was just the code waiting for something to happen
             // So this is just expecting to find the element bernice which is the employee1 element but it's not actually verifying that it says bernice?
