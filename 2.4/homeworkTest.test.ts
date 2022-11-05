@@ -69,7 +69,7 @@ describe("Employee Manager 1.2", () => {
         
       
         });
-
+        
         test("A canceled change doesn't persist", async () => {
             /*
             This test follows these steps:
