@@ -1,8 +1,5 @@
 import { WebDriver, Builder, Capabilities, By, WebElement, until } from "selenium-webdriver";
 
-const driver: WebDriver = new Builder()
-  .withCapabilities(Capabilities.chrome())
-  .build();
   
   const chromedriver = require("chromedriver");
 
@@ -33,7 +30,7 @@ export class SpecPage {
     }
     async sendKeys(elementBy: By, keys){
         await this.driver.wait(until.elementLocated(elementBy))
-        return driver.findElement(elementBy).sendKeys(keys)
+        return this.driver.findElement(elementBy).sendKeys(keys)
 
     }
     async doSearch(searchTerm: String){
